@@ -1,0 +1,10 @@
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    max-width: 200px;
+}
+
+.button > input {
+    width: 100%;
+}
