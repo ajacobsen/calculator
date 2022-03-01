@@ -42,10 +42,10 @@ const operators = document.querySelectorAll('input[data-type="operator"]');
 const AC = document.querySelector('input[data-type="ac"]');
 const equals = document.querySelector('input[data-type="equals"]');
 
-let prevDisplayValue = null;
-let displayValue = '0';
-let operator = null;
-let firstInput = true;
+let prevDisplayValue;
+let displayValue;
+let operator;
+let firstInput;
 
 function clearDisplay(ev) {
     display.value = '0';
@@ -89,4 +89,6 @@ digits.forEach(digit => {
 });
 operators.forEach(op => {
     op.addEventListener('click', operatorInput);
-})
+});
+
+clearDisplay();
