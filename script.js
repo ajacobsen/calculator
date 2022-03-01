@@ -15,6 +15,11 @@ function divide(a, b) {
 }
 
 function operate(operator, a, b) {
+    a = parseFloat(a);
+    b = parseFloat(b);
+    if (isNaN(a) || isNaN(b)) {
+        return '#ERR';
+    }
     switch (operator) {
         case '+':
             return add(a, b);
@@ -62,7 +67,7 @@ function digitInput(ev) {
 
 function operatorInput(ev) {
     if (prevDisplayValue !== null && operator !== null) {
-        prevDisplayValue = operate(operator, parseFloat(prevDisplayValue), parseFloat(displayValue));
+        prevDisplayValue = operate(operator, prevDisplayValue, displayValue);
     } else {
         prevDisplayValue = displayValue;
     }
@@ -71,7 +76,7 @@ function operatorInput(ev) {
 }
 
 function equalsInput(ev) {
-    displayValue = operate(operator, parseFloat(prevDisplayValue), parseFloat(displayValue));
+    displayValue = operate(operator, prevDisplayValue, displayValue);
     display.value = displayValue;
 }
 
