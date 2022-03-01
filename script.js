@@ -28,6 +28,7 @@ function operate(operator, a, b) {
         case '*':
             return multiply(a, b);
         case '/':
+            if (b === 0) return '#ERR';
             return divide(a, b);
         default:
             break;
