@@ -46,6 +46,7 @@ let prevDisplayValue;
 let displayValue;
 let operator;
 let firstInput;
+let lastInputType;
 
 function clearDisplay(ev) {
     display.value = '0';
@@ -53,9 +54,11 @@ function clearDisplay(ev) {
     prevDisplayValue = null;
     operator = null;
     firstInput = true;
+    lastInputType = null;
 }
 
 function digitInput(ev) {
+    lastInputType = 'digit';
     if (firstInput) {
         displayValue = this.value;
         display.value = displayValue;
@@ -67,6 +70,10 @@ function digitInput(ev) {
 }
 
 function operatorInput(ev) {
+    if (lastInputType === 'operator') {
+        display.value = '#ERR';
+        return;
+    }
     if (prevDisplayValue !== null && operator !== null) {
         prevDisplayValue = operate(operator, prevDisplayValue, displayValue);
     } else {
@@ -74,11 +81,13 @@ function operatorInput(ev) {
     }
     operator = this.value;
     firstInput = true;
+    lastInputType = 'operator';
 }
 
 function equalsInput(ev) {
     displayValue = operate(operator, prevDisplayValue, displayValue);
     display.value = displayValue;
+    prevDisplayValue = null;
 }
 
 
