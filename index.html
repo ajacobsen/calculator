@@ -8,24 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="display"><input type="text" value="0" data-type="display" readonly><input type="button" value="AC" data-type="ac"></div>
-    <div class="buttons">
-        <div class="button"><input type="button" value="7" data-type="digit"></div>
-        <div class="button"><input type="button" value="8" data-type="digit"></div>
-        <div class="button"><input type="button" value="9" data-type="digit"></div>
-        <div class="button"><input type="button" value="/" data-type="operator"></div>
-        <div class="button"><input type="button" value="4" data-type="digit"></div>
-        <div class="button"><input type="button" value="5" data-type="digit"></div>
-        <div class="button"><input type="button" value="6" data-type="digit"></div>
-        <div class="button"><input type="button" value="*" data-type="operator"></div>
-        <div class="button"><input type="button" value="1" data-type="digit"></div>
-        <div class="button"><input type="button" value="2" data-type="digit"></div>
-        <div class="button"><input type="button" value="3" data-type="digit"></div>
-        <div class="button"><input type="button" value="-" data-type="operator"></div>
-        <div class="button"><input type="button" value="0" data-type="digit"></div>
-        <div class="button"><input type="button" value="." data-type="point"></div>
-        <div class="button"><input type="button" value="=" data-type="equals"></div>
-        <div class="button"><input type="button" value="+" data-type="operator"></div>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="calculator">
+            <div class="display"><input type="text" value="0" data-type="display" readonly></div>
+            <div class="buttons">
+                <div class="button row-1 col-1"><input type="button" value="AC" data-type="ac"></div>
+                <div class="button row-1 col-4"><input type="button" value="/" data-type="operator"></div>
+                <div class="button row-2 col-1"><input type="button" value="7" data-type="digit"></div>
+                <div class="button row-2 col-2"><input type="button" value="8" data-type="digit"></div>
+                <div class="button row-2 col-3"><input type="button" value="9" data-type="digit"></div>
+                <div class="button row-2 col-4"><input type="button" value="*" data-type="operator"></div>
+                <div class="button row-3 col-1"><input type="button" value="4" data-type="digit"></div>
+                <div class="button row-3 col-2"><input type="button" value="5" data-type="digit"></div>
+                <div class="button row-3 col-3"><input type="button" value="6" data-type="digit"></div>
+                <div class="button row-3 col-4"><input type="button" value="-" data-type="operator"></div>
+                <div class="button row-4 col-1"><input type="button" value="1" data-type="digit"></div>
+                <div class="button row-4 col-2"><input type="button" value="2" data-type="digit"></div>
+                <div class="button row-4 col-3"><input type="button" value="3" data-type="digit"></div>
+                <div class="button row-4 col-4" style="grid-row-end: 6;"><input type="button" value="+" data-type="operator"></div>
+                <div class="button row-5 col-1"><input type="button" value="0" data-type="digit"></div>
+                <div class="button row-5 col-2"><input type="button" value="." data-type="point"></div>
+                <div class="button row-5 col-3"><input type="button" value="=" data-type="equals"></div>
+            </div>
+        </div>
     </div>
     
     <script src="script.js"></script>
