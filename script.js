@@ -76,7 +76,7 @@ function digitInput(ev) {
 
 function operatorInput(ev) {
     if (lastInputType === 'operator') {
-        display.value = '#ERR';
+        operator = this.value;
         return;
     }
     if (prevDisplayValue !== null && operator !== null) {
